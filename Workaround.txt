@@ -1,0 +1,31 @@
+Roshambo's Game
+
+3 Classes:
+- Game
+- Player
+- Move
+
+--- Game ---
+Properties = Player1 & Player2 , Roundnumbers
+Methods = Start Round , New Round , Display Winner
+
+--- Player ---
+Properties = playerName , move , TotalOfRoundsWon , TotalOfRoundsLost
+Methods = TriggerMove
+
+--- Move ---
+Properties = MoveName
+
+
+Instance of Player = Player1 and Player2
+
+Instance of Move = Rock - Scissors - Paper
+
+Logic:
+// -- // Game Starts > It shows player's names and it counts rounds
+// -- // First Round > Both Players execute a move. 
+// -- // Evaluating Winner > Function that check a conditional statement (if Rock is moved along with Scissor, Rock wins) - (if Scissor is moved /         along with Paper, Scissors win) - (if Paper is moved along with Rock, Scissors win), it starts over again until one of the Move is /         different from the other one (if Move is moved with sameMove, round will start again)
+// -- // Display Winner = Shows winner and initialize the next rounds
+// -- // Second Round > Both Players execute a move. 
+/ -- // Evaluating Winner > Function that check a conditional statement (if Rock is moved along with Scissor, Rock wins) - (if Scissor is moved /         along with Paper, Scissors win) - (if Paper is moved along with Rock, Scissors win)
+// -- // Display Winner = Shows winner and check for Endup of the game (if player has 2 consecutive victories, game will end, otherwise          /          initialize the next rounds)     
