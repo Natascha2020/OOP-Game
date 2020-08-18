@@ -58,16 +58,28 @@ class Move {
     this._move = move;
   }
 
-  // checkEven will check if 2 moves are with the same "play" Must be first
-  checkEven() {
-    // If round has 2 same moves, round restarts
+  // checkEven will check if 2 moves are with the same "play" Must be first to be executed
+  checkEven(player1_move, player2_move) {
+    if (player1_move === player2_move) {
+      return evenTie;
+    }
   }
 
-  // CheckWinner will check the winner (the move that is superior to the other)
-  checkWinner() {
-    // If rock is out with scissors = rock wins and check between player1 and player2 who has the rock
-    // If scissors is out with paper = scissors wins and check between player1 and player2 who has the scissors
-    // If paper is out with rock = paper wins and check between player1 and player2 who has the paper
+  // CheckWinner will check the winner (the declared move that is superior to the other)
+  checkWinner(player1_move, player2_move) {
+    if ((player1_move === rock) & (player2_move === scissors)) {
+      return player1Win;
+    } else if ((player2_move === rock) & (player1_move === scissors)) {
+      return player2Win;
+    } else if ((player1_move === scissors) & (player2_move === paper)) {
+      return player1Win;
+    } else if ((player2_move === scissors) & (player1_move === paper)) {
+      return player2Win;
+    } else if ((player1_move === paper) & (player2_move === rock)) {
+      return player1Win;
+    } else if ((player2_move === paper) & (player1_move === rock)) {
+      return player2Win;
+    }
   }
 }
 
@@ -75,6 +87,8 @@ class Move {
 const scissors = new Move("scissors");
 const paper = new Move("paper");
 const rock = new Move("rock");
+
+// Review (const listOfMove = [(scissors = new Move("scissors")), (rock = new Move("rock")), (paper = new Move("paper"))];
 
 // Declaring the Players instances
 const player1 = new Player("player1", "move", "roundsWon");
