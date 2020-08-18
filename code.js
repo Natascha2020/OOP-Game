@@ -28,13 +28,9 @@ class Game {
   }
 
   // Start function
-  // startTheGame() {
-  // console.log(`${this._player1} against ${this._player2} , round ${this._roundNumber}`)
-  // }
-  //
-  //  displayWinner(){
-  // If a player wins 2 times, return the winner player
-  //   }
+  startTheGame() {
+    console.log(`${this._player1} against ${this._player2} , round ${this._roundNumber}`);
+  }
 }
 
 class Player {
