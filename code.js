@@ -44,13 +44,36 @@ class Player {
     this._roundsWon = roundsWon;
   }
 
-  //pickMove(possible move){
+  //pickMove(possible move)
   // The player will pickup one of the available moves, selection will be displayed, moves are "scissors","paper","rock"
-  // }
+
+  pickMove() {
+    switch (this._move) {
+      case scissors:
+        console.log(`${this._name} picked scissors`);
+        break;
+      case paper:
+        console.log(`${this._name} picked paper`);
+        break;
+      case rock:
+        console.log(`${this._name} picked rock`);
+        break;
+      default:
+        console.log("Please pick a valid move: scissors, paper or rock!");
+    }
+  }
 
   // winnings(){
   //display counts total of winnings
   // }
+  winnings() {
+    this._roundsWon += 1;
+    console.log(`${this._name} has already won ${this._roundsWon} rounds!`);
+
+    if (this._roundswon >= 2) {
+      console.log(`${this._name} has won the game! Congrats!!!`);
+    }
+  }
 }
 
 class Move {
@@ -93,3 +116,5 @@ const rock = new Move("rock");
 // Declaring the Players instances
 const player1 = new Player("player1", "move", "roundsWon");
 const player2 = new Player("player2", "move", "roundsWon");
+
+console.log(player1.pickMove());
