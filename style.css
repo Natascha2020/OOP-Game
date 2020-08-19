@@ -59,6 +59,16 @@ img {
   justify-content: center;
 }
 
+#buttonsOne {
+  display: inline-block;
+  margin: 0 10em;
+}
+
+#buttonsTwo {
+  display: inline-block;
+  margin: 0 10em;
+}
+
 input {
   margin: 2em 1em;
   padding: 0.5em 1em;
