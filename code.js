@@ -29,46 +29,70 @@ class Game {
 
   // Start function
   startTheGame() {
-    console.log(`${this._player1} against ${this._player2} , round ${this._roundNumber}`);
+    console.log(`${this._player1._name} against ${this._player2._name} , rounds ${this._roundNumbers}`);
+  }
+
+  player1PickMove(movePlayer1) {
+    this._player1.pickMove(movePlayer1);
+  }
+
+  player2PickMove(movePlayer2) {
+    this._player2.pickMove(movePlayer2);
+  }
+
+  startRound(movePlayer1, movePlayer2) {
+    this.player1PickMove(movePlayer1); // check if player picked the move
+    this.player2PickMove(movePlayer2); // check if player picked the move
+
+    // Check even
+    if (this._player1._move._move === this._player2._move._move) {
+      console.log("Even, pick another move");
+    } else {
+      // If not even, execute checkwinner
+      this.checkWinner();
+    }
+
+    // if countround is = to 3{
+      // check who has more winnings
+    }
+  
+  }
+  // CheckWinner will check the winner (the declared move that is superior to the other)
+  checkWinner() {
+    let player1winnings = 0;
+    let player2winnings = 0;
+    if (this._player1._move._move === "rock" && this._player2._move._move === "scissors") {
+      console.log("Player1 Wins");
+      player1winnings += 1;
+      console.log(player1winnings);
+    } else if (this._player2._move._move === "rock" && this._player1._move._move === "scissors") {
+      console.log("Player2 Wins");
+      player2winnings += 1;
+      console.log(player2winnings);
+    } else if (this._player1._move._move === "scissors" && this._player2._move._move === "paper") {
+      console.log("Player1 Wins");
+      player1winnings += 1;
+    } else if (this._player2._move._move === "scissors" && this._player1._move._move === "paper") {
+      console.log("Player2 Wins");
+      player2winnings += 1;
+      console.log(player2winnings);
+    } else if (this._player1._move._move === "paper" && this._player2._move._move === "rock") {
+      console.log("Player1 Wins");
+      player1winnings += 1;
+    } else if (this._player2._move._move === "paper" && this._player1._move._move === "rock") {
+      console.log("Player2 Wins");
+      player2winnings += 1;
+      console.log(player2winnings);
+    }
   }
 }
-
 class Player {
-  constructor(name, move, roundsWon) {
+  constructor(name) {
     this._name = name;
-    this._move = move;
-    this._roundsWon = roundsWon;
   }
-
   //pickMove(possible move)
-  // The player will pickup one of the available moves, selection will be displayed, moves are "scissors","paper","rock"
-
-  pickMove() {
-    switch (this._move) {
-      case scissors:
-        console.log(`${this._name} picked scissors`);
-        break;
-      case paper:
-        console.log(`${this._name} picked paper`);
-        break;
-      case rock:
-        console.log(`${this._name} picked rock`);
-        break;
-      default:
-        console.log("Please pick a valid move: scissors, paper or rock!");
-    }
-  }
-
-  // winnings(){
-  //display counts total of winnings
-  // }
-  winnings() {
-    this._roundsWon += 1;
-    console.log(`${this._name} has already won ${this._roundsWon} rounds!`);
-
-    if (this._roundswon >= 2) {
-      console.log(`${this._name} has won the game! Congrats!!!`);
-    }
+  pickMove(moveName) {
+    this._move = new Move(moveName); // new Move("scissors");
   }
 }
 
@@ -76,41 +100,10 @@ class Move {
   constructor(move) {
     this._move = move;
   }
-
-  // checkEven will check if 2 moves are with the same "play" Must be first to be executed
-  checkEven(player1_move, player2_move) {
-    if (player1_move === player2_move) {
-      return evenTie;
-    }
-  }
-
-  // CheckWinner will check the winner (the declared move that is superior to the other)
-  checkWinner(player1_move, player2_move) {
-    if ((player1_move === rock) & (player2_move === scissors)) {
-      return player1Win;
-    } else if ((player2_move === rock) & (player1_move === scissors)) {
-      return player2Win;
-    } else if ((player1_move === scissors) & (player2_move === paper)) {
-      return player1Win;
-    } else if ((player2_move === scissors) & (player1_move === paper)) {
-      return player2Win;
-    } else if ((player1_move === paper) & (player2_move === rock)) {
-      return player1Win;
-    } else if ((player2_move === paper) & (player1_move === rock)) {
-      return player2Win;
-    }
-  }
 }
 
-// Declaring the move instances
-const scissors = new Move("scissors");
-const paper = new Move("paper");
-const rock = new Move("rock");
-
-// Review (const listOfMove = [(scissors = new Move("scissors")), (rock = new Move("rock")), (paper = new Move("paper"))];
-
 // Declaring the Players instances
-const player1 = new Player("player1", "move", "roundsWon");
-const player2 = new Player("player2", "move", "roundsWon");
+const player1 = new Player("player1");
+const player2 = new Player("player2");
 
-console.log(player1.pickMove());
+const game = new Game(player1, player2, 3);
