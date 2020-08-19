@@ -36,6 +36,7 @@ class Game {
     this._player1.pickMove(movePlayer1);
   }
 
+
   player2PickMove(movePlayer2) {
     this._player2.pickMove(movePlayer2);
   }

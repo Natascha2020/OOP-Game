@@ -1,0 +1,71 @@
+body {
+  background: lightgrey;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  width: 15em;
+  height: 15em;
+  text-align: center;
+  margin: 2em;
+}
+
+#image {
+  display: inline-block;
+  margin: 4em 2em;
+  width: 15em;
+}
+
+img {
+  width: 100%;
+}
+
+.playerOne {
+  display: inline-block;
+  background-color: red;
+}
+
+.playerTwo {
+  display: inline-block;
+  background-color: grey;
+}
+
+.name {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+.move {
+  margin-top: 5em;
+  font-size: 1.2em;
+}
+
+.wins {
+  margin-top: 1em;
+  font-size: 1em;
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  margin: 2em 1em;
+  padding: 0.5em 1em;
+  border-width: 2px;
+}
+
+h3 {
+  text-align: center;
+  font-size: 2em;
+}
