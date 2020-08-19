@@ -43,7 +43,9 @@ class Player {
   //pickMove(possible move)
   // The player will pickup one of the available moves, selection will be displayed, moves are "scissors","paper","rock"
 
-  pickMove() {
+  pickMove(moveName) {
+    this._move = new Move(moveName);
+
     switch (this._move) {
       case scissors:
         console.log(`${this._name} picked scissors`);
@@ -110,7 +112,9 @@ const rock = new Move("rock");
 // Review (const listOfMove = [(scissors = new Move("scissors")), (rock = new Move("rock")), (paper = new Move("paper"))];
 
 // Declaring the Players instances
-const player1 = new Player("player1", "move", "roundsWon");
-const player2 = new Player("player2", "move", "roundsWon");
+const player1 = new Player("player1");
+const player2 = new Player("player2");
+
+const game = new Game("player1", "player2", "2");
 
 console.log(player1.pickMove());

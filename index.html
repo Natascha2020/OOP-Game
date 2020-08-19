@@ -7,11 +7,41 @@
     <title>OOP Game: Roshambo</title>
   </head>
   <body>
-    <h1>Let's play Roshambo!</h1>
+    <header>
+      <h1>Let's play Roshambo!</h1>
+    </header>
 
-    <input class="btn" type="submit" value="rock" />
-    <input class="btn" type="submit" value="paper" />
-    <input class="btn" type="submit" value="scissors" />
+    <main>
+      <div class="container">
+        <div class="box playerOne">
+          <div class="name">Player 1</div>
+          <div class="move">Move</div>
+          <div class="wins">Score:</div>
+        </div>
+
+        <div id="image">
+          <img
+            src="https://cdn.statically.io/img/nextshark.com/wp-content/uploads/2015/12/large-12.jpg?quality=100"
+            alt="Quote: Let us settle this as adults"
+          />
+        </div>
+
+        <div class="box playerTwo">
+          <div class="name">Player 2</div>
+          <div class="move">Move</div>
+          <div class="wins">Score:</div>
+        </div>
+      </div>
+
+      <br />
+      <div id="buttons">
+        <input class="btn" type="submit" value="rock" />
+        <input class="btn" type="submit" value="paper" />
+        <input class="btn" type="submit" value="scissors" />
+      </div>
+
+      <h3>Winner:</h3>
+    </main>
 
     <script src="code.js"></script>
   </body>
