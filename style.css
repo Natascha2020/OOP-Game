@@ -7,6 +7,17 @@ body {
 h1 {
   text-align: center;
   font-family: "Roboto", sans-serif;
+  margin-bottom: 2em;
+}
+
+img {
+  width: 100%;
+}
+
+input {
+  margin-top: 2em 1em;
+  padding: 0.5em 1em;
+  border-width: 2px;
 }
 
 .container {
@@ -15,25 +26,16 @@ h1 {
 }
 
 .box {
-  width: 15em;
+  width: 16em;
   height: 15em;
   text-align: center;
   margin: 2em;
-}
-
-#image {
-  display: inline-block;
-  margin: 4em 2em;
-  width: 15em;
-}
-
-img {
-  width: 100%;
+  color: lightgrey;
 }
 
 .playerOne {
   display: inline-block;
-  background-color: red;
+  background-color: #8b0000;
 }
 
 .playerTwo {
@@ -60,6 +62,24 @@ img {
   font-family: "Roboto", sans-serif;
 }
 
+.btn {
+  box-shadow: 0px 0px 12px -2px;
+  background-color: darkcyan;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0.5em 1em;
+}
+
+.btn:hover {
+  background-color: #007272;
+}
+
+.button:active {
+  background-color: #007272;
+  transform: translateY(4px);
+}
+
 #buttons {
   display: flex;
   justify-content: center;
@@ -67,17 +87,48 @@ img {
 
 #buttonsOne {
   display: inline-block;
-  margin: 0 10em;
+  margin-top: 2em;
 }
 
 #buttonsTwo {
   display: inline-block;
-  margin: 0 10em;
+  margin-top: 2em;
 }
 
-input {
-  margin: 2em 1em;
-  padding: 0.5em 1em;
-  border-width: 2px;
+#checkWinner,
+#startGame {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  margin: -1em;
 }
 
+.checkWinner,
+.startGame {
+  background-color: #656172;
+  color: darkgray;
+}
+
+#image {
+  display: inline-block;
+  margin: 4em 2em;
+  width: 15em;
+}
+
+@media only screen and (max-width: 650px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    margin-top: 3em;
+    margin-bottom: -2em;
+  }
+
+  #checkWinner {
+    margin-top: 7em;
+  }
+}
