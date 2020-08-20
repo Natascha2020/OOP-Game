@@ -12,7 +12,7 @@
 
 // Creation of the class Game
 class Game {
-  constructor(player1, player2, maxRounds = 0) {
+  constructor(player1, player2, maxRounds = 3) {
     this._player1 = player1;
     this._player2 = player2;
     this._maxRounds = maxRounds;
@@ -108,5 +108,4 @@ class Move {
 const player1 = new Player("player1");
 const player2 = new Player("player2");
 
-// Inizialitaion of game
-const game = new Game(player1, player2, 5);
+const game = new Game(player1, player2, 3);
