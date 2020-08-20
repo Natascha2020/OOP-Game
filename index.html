@@ -12,11 +12,20 @@
     </header>
 
     <main>
+      <div id="startGame">
+        <input class="btn startGame" type="submit" value="Start new Game!" />
+      </div>
+
       <div class="container">
         <div class="box playerOne">
           <div class="name nameOne">Player 1</div>
-          <div class="move moveOne">Move:</div>
+          <div class="move moveOne">Move</div>
           <div class="wins winsOne">Wins:</div>
+          <div id="buttonsOne">
+            <input class="btn buttonOne rockOne" type="submit" value="Rock" />
+            <input class="btn buttonOne paperOne" type="submit" value="Paper" />
+            <input class="btn buttonOne scissorsOne" type="submit" value="Scissors" />
+          </div>
         </div>
 
         <div id="image">
@@ -24,34 +33,23 @@
             src="https://cdn.statically.io/img/nextshark.com/wp-content/uploads/2015/12/large-12.jpg?quality=100"
             alt="Quote: Let us settle this as adults"
           />
-          <div id="startGame">
-            <input class="btn startGame" type="submit" value="Start new Game!" />
-          </div>
-          <div id="checkWinner">
-            <input class="btn checkWinner" type="submit" value="Check Winner!" />
-          </div>
         </div>
 
         <div class="box playerTwo">
           <div class="name nameTwo">Player 2</div>
-          <div class="move moveTwo">Move:</div>
+          <div class="move moveTwo">Move</div>
           <div class="wins winsTwo">Wins:</div>
+
+          <div id="buttonsTwo">
+            <input class="btn buttonTwo rockTwo" type="submit" value="Rock" />
+            <input class="btn buttonTwo paperTwo" type="submit" value="Paper" />
+            <input class="btn buttonTwo scissorsTwo" type="submit" value="Scissors" />
+          </div>
         </div>
       </div>
 
-      <br />
-      <div id="buttons">
-        <div id="buttonsOne">
-          <input class="btn buttonOne rockOne" type="submit" value="Rock" />
-          <input class="btn buttonOne paperOne" type="submit" value="Paper" />
-          <input class="btn buttonOne scissorsOne" type="submit" value="Scissors" />
-        </div>
-
-        <div id="buttonsTwo">
-          <input class="btn buttonTwo rockTwo" type="submit" value="Rock" />
-          <input class="btn buttonTwo paperTwo" type="submit" value="Paper" />
-          <input class="btn buttonTwo scissorsTwo" type="submit" value="Scissors" />
-        </div>
+      <div id="checkWinner">
+        <input class="btn checkWinner" type="submit" value="Check Winner!" />
       </div>
     </main>
 
