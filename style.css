@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
 body {
   background: lightgrey;
 }
 
 h1 {
   text-align: center;
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -42,16 +45,19 @@ img {
   font-size: 1.5em;
   font-weight: bold;
   margin-top: 1em;
+  font-family: "Roboto", sans-serif;
 }
 
 .move {
   margin-top: 5em;
   font-size: 1.2em;
+  font-family: "Roboto", sans-serif;
 }
 
 .wins {
   margin-top: 1em;
   font-size: 1em;
+  font-family: "Roboto", sans-serif;
 }
 
 #buttons {
@@ -78,4 +84,5 @@ input {
 h3 {
   text-align: center;
   font-size: 2em;
+  font-family: "Roboto", sans-serif;
 }
