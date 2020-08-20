@@ -1,12 +1,13 @@
 class Game {
-  constructor(player1, player2) {
+  constructor(player1, player2, maxRounds = 0) {
     this._player1 = player1;
     this._player2 = player2;
+    this._maxRounds = maxRounds;
   }
 
   // Start function
   startTheGame() {
-    console.log(`${this._player1._name} against ${this._player2._name}`);
+    console.log(`${this._player1._name} against ${this._player2._name}, Best of ${this._maxRounds}`);
   }
 
   player1PickMove(movePlayer1) {
@@ -28,9 +29,9 @@ class Game {
       // If not even, execute checkwinner
       this.checkWinner();
     }
-    if (this._player1._wins === 2) {
+    if (this._player1._wins > this._maxRounds / 2) {
       console.log("Player 1 has won the game!");
-    } else if (this._player2._wins === 2) {
+    } else if (this._player2._wins > this._maxRounds / 2) {
       console.log("Player 2 has won the game!");
     }
   }
@@ -86,4 +87,4 @@ class Move {
 const player1 = new Player("player1");
 const player2 = new Player("player2");
 
-const game = new Game(player1, player2);
+const game = new Game(player1, player2, 5);
