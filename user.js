@@ -33,8 +33,6 @@ for (button of buttonsTwo) {
 //EventListener for Check-Winner-Button
 checkWinner.addEventListener("click", (e) => {
   game.startRound(moveOne.innerText, moveTwo.innerText);
-  moveOne.style.visibility = "initial";
-  moveTwo.style.visibility = "initial";
 });
 
 class Game {
@@ -48,6 +46,12 @@ class Game {
   startTheGame() {
     console.log(`${this._player1._name} against ${this._player2._name}: Best of ${this._maxRounds}`);
     alert(`${this._player1._name} against ${this._player2._name}: Best of ${this._maxRounds}`);
+    this._player1._wins = 0;
+    this._player2._wins = 0;
+    winsOne.innerText = "Wins:";
+    winsTwo.innerText = "Wins:";
+    moveOne.innerText = "Move";
+    moveTwo.innerText = "Move";
   }
 
   player1PickMove(movePlayer1) {
@@ -72,6 +76,8 @@ class Game {
       // If not even, execute checkwinner
       this.checkWinner();
     }
+    moveOne.innerText = "Move";
+    moveTwo.innerText = "Move";
     if (this._player1._wins > this._maxRounds / 2) {
       console.log("Player 1 has won the game!");
       alert("Player 1 has won the game!");
