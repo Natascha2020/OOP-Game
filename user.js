@@ -1,12 +1,12 @@
 // Declaration of variables for Eventlistener
-let startGame = document.getElementsByClassName("startGame")[0];
-let moveOne = document.getElementsByClassName("moveOne")[0];
-let moveTwo = document.getElementsByClassName("moveTwo")[0];
-let winsOne = document.getElementsByClassName("winsOne")[0];
-let winsTwo = document.getElementsByClassName("winsTwo")[0];
-let checkWinner = document.getElementsByClassName("checkWinner")[0];
-let buttonsOne = document.getElementsByClassName("buttonOne");
-let buttonsTwo = document.getElementsByClassName("buttonTwo");
+const startGame = document.getElementsByClassName("startGame")[0];
+const moveOne = document.getElementsByClassName("moveOne")[0];
+const moveTwo = document.getElementsByClassName("moveTwo")[0];
+const winsOne = document.getElementsByClassName("winsOne")[0];
+const winsTwo = document.getElementsByClassName("winsTwo")[0];
+const checkWinner = document.getElementsByClassName("checkWinner")[0];
+const buttonsOne = document.getElementsByClassName("buttonOne");
+const buttonsTwo = document.getElementsByClassName("buttonTwo");
 
 // EventListener for StartGame-Button
 startGame.addEventListener("click", (e) => {
